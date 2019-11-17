@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 import SpeakersHeader from './SpeakersHeader';
@@ -50,7 +50,7 @@ class Speakers extends Component {
         else {
             return (
                 <div>
-                    <SpeakersHeader />
+                    <SpeakersHeader/>
                     <SpeakerList speakers={this.props.speakers} />
                 </div>
             );
