@@ -6,11 +6,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
-      <Router>
-        <FullPage />
-      </Router>
-       
+        <Router>
+          <FullPage />
+        </Router>
       </div>
     );
   }

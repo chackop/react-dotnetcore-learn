@@ -16,6 +16,6 @@ import ReactDOM from "react-dom";
 //ReactDOM.render(rootElement, document.getElementById('root'));
 
 ReactDOM.render(
-    <div>Hi from Pluralsight</div>,
+    <div>Hello</div>,
     document.body
 );

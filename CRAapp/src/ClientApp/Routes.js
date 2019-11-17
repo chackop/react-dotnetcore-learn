@@ -13,9 +13,9 @@ export default () => {
         <div>
             <Switch>
                 <Route path="/speakers/:name" component={SpeakerDetail} />
-                <Route exact path="/speakers" component={Speakers}/>
-                <Route exact path="/" component={Home}/>
-                <Route exact path="/login" component={Login}/>
+                <Route exact path="/speakers" component={Speakers} />
+                <Route exact path="/" component={Home} />
+                <Route exact path="/login" component={Login} />
             </Switch>
         </div>
     )
