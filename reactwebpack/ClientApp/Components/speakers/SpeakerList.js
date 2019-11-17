@@ -11,35 +11,6 @@ export default function SpeakerList({ speakers }) {
             <div className="speakers-title">
               Speakers
               <span className="speakers-filters">
-                {/*<div className="filter-bar__search input-group col-12 col-md-6">*/}
-                {/*<input*/}
-                {/*type="text"*/}
-                {/*className="form-control"*/}
-                {/*placeholder="Search for a name or company"*/}
-                {/*/>*/}
-                {/*<div className="input-group-addon filter-bar__search__button">*/}
-                {/*<i className="fa fa-search" aria-hidden="true" />*/}
-                {/*</div>*/}
-                {/*</div>*/}
-                {/*<div className="dropdown col-12 col-md-3">*/}
-                {/*<button*/}
-                {/*className="btn btn-white btn-white--bordered dropdown-toggle"*/}
-                {/*id="dropdownFilter"*/}
-                {/*data-toggle="dropdown"*/}
-                {/*aria-haspopup="true"*/}
-                {/*aria-expanded="false"*/}
-                {/*>*/}
-                {/*Select a day*/}
-                {/*</button>*/}
-                {/*<div*/}
-                {/*className="dropdown-menu"*/}
-                {/*aria-labelledby="dropdownFilter"*/}
-                {/*>*/}
-                {/*<a className="dropdown-item" href="" data-value="reset">*/}
-                {/*Select a day*/}
-                {/*</a>*/}
-                {/*</div>*/}
-                {/*</div>*/}
               </span>
             </div>
 

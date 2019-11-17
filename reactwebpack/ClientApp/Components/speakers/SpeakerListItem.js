@@ -1,14 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 export default function SpeakerListItem({
-    id,
-    firstName,
-    lastName,
-    company,
-    imageUrl,
-}) {
+                                            id,
+                                            firstName,
+                                            lastName,
+                                            company,
+                                            imageUrl,
+                                        }) {
 
     const basename = "";
     const img = () => {
@@ -21,7 +21,7 @@ export default function SpeakerListItem({
             );
         }
         return (
-            <img src={'/' + imageUrl} alt="{this.props.firstName} {this.props.lastName}" />
+            <img src={'/' + imageUrl} alt="{this.props.firstName} {this.props.lastName}"/>
         );
     };
 
