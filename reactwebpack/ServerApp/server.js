@@ -2,6 +2,10 @@
 const express = require('express');
 const app = express();
 
+// enable the next two lines allows for urls like /speakers to resolve directly
+// const history = require('connect-history-api-fallback');
+// app.use(history());
+
 app.use(express.static('public',{
     index: false
 }));
