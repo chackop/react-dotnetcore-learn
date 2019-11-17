@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function HomeSpeakersCarousel() {
+export default function HomeSpeakersCaurosel() {
   return (
     <div className="speakers-carousel">
       <div className="speakers-carousel__title">Meet the speakers</div>

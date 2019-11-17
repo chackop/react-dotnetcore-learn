@@ -19,14 +19,12 @@ export default function HomeHeader() {
             </div>
           </div>
           <div className="col-12 col-sm-8">
-            <div className="jumbo-events__title">SVCC 2017</div>
+            <div className="jumbo-events__title">Title of the event</div>
             <div className="jumbo-events__description">
-                Silicon Valley Code Camp is a community event where
-                developers learn from fellow developers. We also have
-                developer related topics that include software
-                branding, legal issues around software as well as
-                other topics developers are interested in hearing
-                about.
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Provident, accusantium, ratione. Neque exercitationem quaerat odio
+              accusamus. Labore, veniam. Officiis quia veniam accusantium.
+              Accusamus repellat quae aliquid totam, eveniet eius aspernatur...
             </div>
             <div className="jumbo-events__buttons">
               <div className="dropdown">

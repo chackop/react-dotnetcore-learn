@@ -11,7 +11,7 @@ export default function Footer() {
             of 73rd Street Associates (Copyright ©
           </p>
           <p>
-            Site built with ASP.NET, WebAPI2, React and more by &nbsp;
+            Site built with ASP.NET, WebAPI2, React and more by
             <strong>PeterKellner.net</strong>
           </p>
         </div>
