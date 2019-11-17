@@ -27,7 +27,7 @@ class Routes extends Component {
                     <Route exact path="/" component={Home}/>
                     <Route exact path="/speakers" component={Speakers}/>
                     <Route exact path="/login" component={Login}/>
-                    <Route render={() => <RouteNotFound/>}/>
+                    <Route render={() => <RouteNotFound />}></Route>
                 </Switch>
             </div>
         );
