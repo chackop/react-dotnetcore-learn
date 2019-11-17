@@ -1261,9 +1261,21 @@ var RouteNotFound = function (_Component) {
     }
 
     _createClass(RouteNotFound, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            this.props.action(true);
+        }
+    }, {
         key: 'render',
         value: function render() {
-            return _react2.default.createElement(_reactRouterDom.Route, { render: function render() {
+            console.log('route not found in RouteNotFound.js.  Bubble up...');
+            //this.props.action(false);
+            return _react2.default.createElement(_reactRouterDom.Route, { render: function render(_ref) {
+                    var staticContext = _ref.staticContext;
+
+                    if (staticContext) {
+                        staticContext.status = 404;
+                    }
                     return _react2.default.createElement(
                         'div',
                         null,
@@ -1283,6 +1295,36 @@ var RouteNotFound = function (_Component) {
 RouteNotFound.defaultProps = {};
 
 exports.default = RouteNotFound;
+
+// 1/4/2019: NOTE
+// I'M LEAVING THE BELOW CODE IN COMMENTED OUT JUST TO MAKE IT EXTRA CLEAR THAT THIS WAS THE CODE
+// BEFORE THE 1/4/2019 UPDATED AND THE NEW CODE ABOVE REPLACES IT.
+// THANKS GO TO @PATRICKWEEGAN FOR REPORTING THE ISSUE
+// https://github.com/pkellner/pluralsight-course-react-aspnet-core/issues/3
+// I DON'T LIKE LEAVING IN COMMENTED CODE, BUT IN THIS CASE, I THINK IT IS HELPFUL TO AVOID CONFUSION IF SOMEONE HAS
+// OLD CODE AROUND AND DOES NOT REALIZE IT WAS UPDATED. THIS MAKES IT EXTRA CLEAR -PETER KELLNER
+//
+
+// import React, {Component} from 'react';
+// import { Route } from 'react-router-dom';
+//
+// class RouteNotFound extends Component {
+//     render() {
+//         return (
+//             <Route render={() => {
+//                 return (
+//                     <div>
+//                         <h1>404 : Not Found!</h1>
+//                     </div>
+//                 )
+//             }}/>
+//         );
+//     }
+// }
+//
+// RouteNotFound.defaultProps = {};
+//
+// export default RouteNotFound;
 
 /***/ }),
 
@@ -1390,7 +1432,7 @@ exports.default = Routes;
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _react = __webpack_require__(/*! react */ "react");
@@ -1408,17 +1450,17 @@ var _FullPage2 = _interopRequireDefault(_FullPage);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = function (req) {
-    var context = {};
-    var content = (0, _server.renderToString)(_react2.default.createElement(
-        _reactRouterDom.StaticRouter,
-        { location: req.path, context: context },
-        _react2.default.createElement(_FullPage2.default, null)
-    ));
+  var context = {};
+  var content = (0, _server.renderToString)(_react2.default.createElement(
+    _reactRouterDom.StaticRouter,
+    { location: req.path, context: context },
+    _react2.default.createElement(_FullPage2.default, null)
+  ));
 
-    return {
-        htmlcode: '<html>\n          <head>\n            <title>SVCC React Application</title>\n            <link rel="stylesheet" href="App.css">            \n          </head>\n          \n          <body>\n            <div id="app">' + content + '</div>\n            <script src="clientbundle.js"></script>\n          </body>\n          \n        </html>\n      ',
-        routestatus: context.status
-    };
+  return {
+    htmlcode: '<html>\n          <head>\n            <title>SVCC React Application</title>\n            <link rel="stylesheet" href="App.css">            \n          </head>\n          \n          <body>\n            <div id="app">' + content + '</div>\n            <script src="clientbundle.js"></script>\n          </body>\n          \n        </html>\n      ',
+    routestatus: context.status
+  };
 };
 
 /***/ }),

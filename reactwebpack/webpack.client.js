@@ -12,7 +12,7 @@ const config = {
     entry: APP_DIR + '/Client.js',
     devServer:{
         contentBase: PUBLIC_DIR,
-        port: 9000,
+        port: 9001,
         open: true,
         historyApiFallback: true
     },
