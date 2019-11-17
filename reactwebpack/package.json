@@ -33,8 +33,8 @@
     "dev:server": "node build/serverbundle.js",
     "dev:all": "npm-run-all --serial dev:build-server dev:build-client dev:server",
     "prod:bundlefordeploy": "webpack --config webpack.client.js",
-    "prod:cleanwwwroot": "rimraf ../WebApp/wwwroot",
-    "prod:copytowwwroot": "cpx 'public/**/*' ../WebApp/wwwroot",
+    "prod:cleanwwwroot": "rimraf ../dotNetAppRctWebPack/wwwroot",
+    "prod:copytowwwroot": "cpx 'public/**/*' ../dotNetAppRctWebPack/wwwroot",
     "prod:deploy": "npm-run-all --serial prod:bundlefordeploy prod:cleanwwwroot prod:copytowwwroot"
   },
   "author": "",
