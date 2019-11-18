@@ -1,4 +1,4 @@
-import { SPEAKER_LOAD, SPEAKER_LOAD_FAIL, SPEAKER_LOAD_SUCCESS } from "../actions/speakers";
+import {SPEAKER_LOAD, SPEAKER_LOAD_FAIL, SPEAKER_LOAD_SUCCESS} from "../actions/speakers";
 
 export function speakers(state = {
     data: [],

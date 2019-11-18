@@ -12,8 +12,8 @@ export function sessionsFetchData() {
     return {
         type: SESSION_LOAD,
         payload: {
-            request: {
-                url: 'http://localhost:4000/rest/sessions'
+            request:{
+                url:'/sessions'
             }
         }
     }
@@ -27,7 +27,7 @@ export function updateSession(sessionRec) {
         payload: {
             request: {
                 method: 'PUT', // UPDATE RECORD
-                url: 'http://localhost:4000/rest/sessions/' + sessionRec.id,
+                url: '/sessions/' + sessionRec.id,
                 data: {
                     ...sessionRec
                 }

@@ -6,6 +6,29 @@ import axiosMiddleware from 'redux-axios-middleware';
 
 import { composeWithDevTools } from 'redux-devtools-extension';
 
+
+
+const production = process.env.NODE_ENV &&
+    process.env.NODE_ENV === "production";
+
+if (!production) {
+    require('dotenv').config();
+}
+
+const restUrl = production ?
+    process.env.PROD_RESTURL :
+    process.env.JSONSERVER_RESTURL;
+
+let middleware = [
+    thunk,
+    axiosMiddleware(axios.create({baseURL:restUrl}))
+];
+
+if (!production) {
+    middleware.push(require('redux-immutable-state-invariant').default());
+    console.log('added redux-immutable-state-invariant');
+}
+
 export default function configureStore(initialState = {}) {
 
     const composeEnhancers = composeWithDevTools({
@@ -15,7 +38,7 @@ export default function configureStore(initialState = {}) {
     //const restUrl = 'http://localhost:4000/rest';
 
     const client = axios.create({ //all axios can be used, shown in axios documentation
-        //baseURL: restUrl,
+        baseURL: restUrl,
         //responseType: 'json'
     });
 
@@ -23,6 +46,6 @@ export default function configureStore(initialState = {}) {
         reducers,
         initialState,
         composeEnhancers(
-            applyMiddleware(thunk,axiosMiddleware(axios.create())))
+            applyMiddleware(...middleware))
     );
 }

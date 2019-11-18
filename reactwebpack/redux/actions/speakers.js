@@ -7,7 +7,7 @@ export function speakersFetchData() {
         type: SPEAKER_LOAD,
         payload: {
             request:{
-                url:'http://localhost:4000/rest/speakers'
+                url:'/speakers'
             }
         }
     }
