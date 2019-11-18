@@ -7,6 +7,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using dotNetRestWebApp;
 using dotNetRestWebApp.Models;
+using System.Threading;
+using System.Reflection;
+using System.IO;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace dotNetRestWebApp.Controllers
 {
@@ -25,7 +31,36 @@ namespace dotNetRestWebApp.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<SpeakerRec>>> GetSpeakerRecs()
         {
+            if (_context.SpeakerRecs.ToList().Count == 0)
+            {
+                InitSpeakersData();
+            }
+
+            Thread.Sleep(200);// artificial delay for UI
+
             return await _context.SpeakerRecs.ToListAsync();
+        }
+
+        private void InitSpeakersData()
+        {
+            string file;
+            var assembly = Assembly.GetEntryAssembly();
+            string[] resources = assembly.GetManifestResourceNames(); // debugging purposes only to get list of embedded resources
+            using (var stream = 
+                assembly.GetManifestResourceStream("dotNetRestWebApp.Data.speakers.json"))
+            {
+                using (var reader = new StreamReader(stream))
+                {
+                    file = reader.ReadToEnd();
+                }
+            }
+            List<SpeakerRec> speakerRecs = JsonConvert.DeserializeObject<SpeakerRec[]>(file).ToList();
+            foreach (var speaker in speakerRecs)
+            {
+                _context.SpeakerRecs.Add(speaker);
+            }
+            _context.SaveChanges();
+            return;
         }
 
         // GET: api/Speakers/5

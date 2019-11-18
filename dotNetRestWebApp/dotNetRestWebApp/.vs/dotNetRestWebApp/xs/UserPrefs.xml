@@ -1,20 +1,21 @@
 ﻿<Properties StartupConfiguration="{3FEBF1C9-ED74-4C23-AFFF-D2A83DDCF252}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="dotNetRestWebApp/MyDbContext.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="dotNetRestWebApp/Controllers/SpeakersController.cs">
     <Files>
-      <File FileName="dotNetRestWebApp/Startup.cs" Line="70" Column="1" />
+      <File FileName="dotNetRestWebApp/Startup.cs" Line="34" Column="29" />
       <File FileName="dotNetRestWebApp/Models/SpeakerRec.cs" Line="16" Column="1" />
       <File FileName="dotNetRestWebApp/Models/SessionRec.cs" Line="6" Column="27" />
       <File FileName="dotNetRestWebApp/Controllers/WeatherForecastController.cs" Line="6" Column="36" />
-      <File FileName="dotNetRestWebApp/MyDbContext.cs" Line="2" Column="13" />
+      <File FileName="dotNetRestWebApp/MyDbContext.cs" Line="11" Column="28" />
+      <File FileName="dotNetRestWebApp/Controllers/SpeakersController.cs" Line="41" Column="27" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="dotNetRestWebApp" expanded="True">
             <Node name="dotNetRestWebApp" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="Models" expanded="True" />
-              <Node name="MyDbContext.cs" selected="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="SpeakersController.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>
