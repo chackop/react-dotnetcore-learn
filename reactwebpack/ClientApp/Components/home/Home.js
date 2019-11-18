@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 import PropTypes from 'prop-types';
 import HomeHeader from './HomeHeader';
@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 import { sessionsFetchData } from ".././../../redux/actions/sessions";
 import { speakersFetchData } from ".././../../redux/actions/speakers";
 
-import {updateSession} from "../../../redux/actions/sessions";
+import { updateSession } from "../../../redux/actions/sessions";
 
 class Home extends Component {
 
@@ -47,9 +47,17 @@ const mapStateToProps = (state) => {
     };
 };
 
-//https://shinesolutions.com/2017/12/14/putting-together-the-pieces-server-side-rendering-with-react-router-v4-and-redux/
-export default connect(mapStateToProps,
-    {sessionsFetchData,updateSession })(Home);
+function loadData() {
+}
+
+// export default connect(mapStateToProps,
+//     {sessionsFetchData,updateSession })(Home);
+
+export default {
+    component: connect(mapStateToProps,
+        { sessionsFetchData, speakersFetchData, updateSession })(Home),
+    loadData
+};
 
 
 

@@ -1,3 +1,4 @@
+import configureStore from "../redux/configureStore";
 
 const express = require('express');
 const app = express();
@@ -12,12 +13,15 @@ app.use(express.static('public',{
 
 import Renderer from './Renderer';
 app.get('*', (req, res) => {
-    const rendererInstance = Renderer(req);
+
+    const store = configureStore();
+    const rendererInstance = Renderer(req,store);
 
     if (rendererInstance.routestatus == 404){
         res.status(404).end("Not found, 404 status returned");
     } else {
-        res.send(Renderer(req).htmlcode);
+        const context = {};
+        res.send(Renderer(req,store,context).htmlcode);
     }
 });
 

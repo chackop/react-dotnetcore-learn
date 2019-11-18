@@ -85,24 +85,16 @@ const mapStateToProps = (state) => {
     };
 };
 
-
-//export default Speakers;
-
-export default connect(mapStateToProps,
-    { speakersFetchData })(Speakers)
+// export default connect(mapStateToProps,
+//     { speakersFetchData })(Speakers)
 
 
-// import React from 'react';
-// import SpeakersHeader from './SpeakersHeader';
-//
-// export default function Speakers(props) {
-//
-//
-//
-//
-//     return (
-//         <div>
-//             <SpeakersHeader/>
-//         </div>
-//     );
-// }
+// this is returning a promise
+function loadData() {
+}
+
+export default {
+    component: connect(mapStateToProps, { speakersFetchData })(Speakers),
+    loadData
+};
+
