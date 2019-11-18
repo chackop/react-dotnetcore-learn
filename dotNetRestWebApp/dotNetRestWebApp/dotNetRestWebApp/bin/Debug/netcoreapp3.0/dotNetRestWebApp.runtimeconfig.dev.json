@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "/Users/dimpchax/.dotnet/store/|arch|/|tfm|",
+      "/Users/dimpchax/.nuget/packages"
+    ]
+  }
+}
