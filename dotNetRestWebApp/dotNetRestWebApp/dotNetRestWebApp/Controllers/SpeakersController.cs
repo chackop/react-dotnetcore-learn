@@ -16,8 +16,10 @@ using Newtonsoft.Json;
 
 namespace dotNetRestWebApp.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
+    // [Route("api/[controller]")]
+    // [ApiController]
+    [Produces("application/json")]
+    [Route("rest/Speakers")]
     public class SpeakersController : ControllerBase
     {
         private readonly MyDbContext _context;
@@ -45,7 +47,8 @@ namespace dotNetRestWebApp.Controllers
         {
             string file;
             var assembly = Assembly.GetEntryAssembly();
-            string[] resources = assembly.GetManifestResourceNames(); // debugging purposes only to get list of embedded resources
+            // string[] resources = assembly.GetManifestResourceNames(); // debugging purposes only to get list of embedded resources
+            string[] resources = this.GetType().GetTypeInfo().Assembly.GetManifestResourceNames();
             using (var stream = 
                 assembly.GetManifestResourceStream("dotNetRestWebApp.Data.speakers.json"))
             {

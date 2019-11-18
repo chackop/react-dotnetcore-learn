@@ -5,6 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Data\sessions.json" />
+    <Content Remove="Data\speakers.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,5 +28,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Data\sessions.json" />
+    <EmbeddedResource Include="Data\speakers.json" />
   </ItemGroup>
 </Project>

@@ -14,7 +14,7 @@
         "outputPath": "/Users/dimpchax/Documents/code/react-dotnetcore-learn/dotNetRestWebApp/dotNetRestWebApp/dotNetRestWebApp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/dimpchax/.config/NuGet/NuGet.Config"
+          "/Users/dimpchax/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"

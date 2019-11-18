@@ -1,7 +1,5 @@
 /Users/dimpchax/Documents/code/react-dotnetcore-learn/dotNetRestWebApp/dotNetRestWebApp/dotNetRestWebApp/bin/Debug/netcoreapp3.0/appsettings.Development.json
 /Users/dimpchax/Documents/code/react-dotnetcore-learn/dotNetRestWebApp/dotNetRestWebApp/dotNetRestWebApp/bin/Debug/netcoreapp3.0/appsettings.json
-/Users/dimpchax/Documents/code/react-dotnetcore-learn/dotNetRestWebApp/dotNetRestWebApp/dotNetRestWebApp/bin/Debug/netcoreapp3.0/Data/sessions.json
-/Users/dimpchax/Documents/code/react-dotnetcore-learn/dotNetRestWebApp/dotNetRestWebApp/dotNetRestWebApp/bin/Debug/netcoreapp3.0/Data/speakers.json
 /Users/dimpchax/Documents/code/react-dotnetcore-learn/dotNetRestWebApp/dotNetRestWebApp/dotNetRestWebApp/bin/Debug/netcoreapp3.0/Properties/launchSettings.json
 /Users/dimpchax/Documents/code/react-dotnetcore-learn/dotNetRestWebApp/dotNetRestWebApp/dotNetRestWebApp/bin/Debug/netcoreapp3.0/dotNetRestWebApp
 /Users/dimpchax/Documents/code/react-dotnetcore-learn/dotNetRestWebApp/dotNetRestWebApp/dotNetRestWebApp/bin/Debug/netcoreapp3.0/dotNetRestWebApp.deps.json
@@ -107,6 +105,7 @@
 /Users/dimpchax/Documents/code/react-dotnetcore-learn/dotNetRestWebApp/dotNetRestWebApp/dotNetRestWebApp/bin/Debug/netcoreapp3.0/runtimes/unix/lib/netcoreapp2.0/System.Runtime.Caching.dll
 /Users/dimpchax/Documents/code/react-dotnetcore-learn/dotNetRestWebApp/dotNetRestWebApp/dotNetRestWebApp/bin/Debug/netcoreapp3.0/runtimes/win/lib/netcoreapp2.0/System.Runtime.Caching.dll
 /Users/dimpchax/Documents/code/react-dotnetcore-learn/dotNetRestWebApp/dotNetRestWebApp/dotNetRestWebApp/bin/Debug/netcoreapp3.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
+/Users/dimpchax/Documents/code/react-dotnetcore-learn/dotNetRestWebApp/dotNetRestWebApp/dotNetRestWebApp/obj/Debug/netcoreapp3.0/dotNetRestWebApp.csprojAssemblyReference.cache
 /Users/dimpchax/Documents/code/react-dotnetcore-learn/dotNetRestWebApp/dotNetRestWebApp/dotNetRestWebApp/obj/Debug/netcoreapp3.0/staticwebassets/dotNetRestWebApp.StaticWebAssets.Manifest.cache
 /Users/dimpchax/Documents/code/react-dotnetcore-learn/dotNetRestWebApp/dotNetRestWebApp/dotNetRestWebApp/obj/Debug/netcoreapp3.0/staticwebassets/dotNetRestWebApp.StaticWebAssets.xml
 /Users/dimpchax/Documents/code/react-dotnetcore-learn/dotNetRestWebApp/dotNetRestWebApp/dotNetRestWebApp/obj/Debug/netcoreapp3.0/dotNetRestWebApp.MvcApplicationPartsAssemblyInfo.cache
