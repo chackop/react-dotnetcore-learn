@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using Microsoft.EntityFrameworkCore;
+using dotNetRestWebApp.Models;
 
 namespace dotNetRestWebApp
 {
@@ -28,6 +30,9 @@ namespace dotNetRestWebApp
         {
             services.AddControllers();
 
+            services.AddDbContext<MyDbContext>
+                (opt => opt.UseInMemoryDatabase("CodeCampInMemoryDb"));
+
             services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy",
@@ -37,8 +42,10 @@ namespace dotNetRestWebApp
                     .AllowCredentials());
             });
 
-            // services.AddControllers()
-            //     .AddNewtonsoftJson(options => options.SerializerSettings.Formatting = Formatting.Indented);
+            // TODO: Resolve newtonsoft dependency
+
+            //  services.AddControllers()
+            //      .AddNewtonsoftJson(options => options.SerializerSettings.Formatting = Formatting.Indented);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

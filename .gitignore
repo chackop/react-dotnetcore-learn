@@ -4,6 +4,7 @@
 /node_modules
 /CRAapp/node_modules
 /reactwebpack/node_modules
+/dotNetRestWebApp/dotNetRestWebApp/dotNetRestWebApp/bin
 /.pnp
 .pnp.js
 
