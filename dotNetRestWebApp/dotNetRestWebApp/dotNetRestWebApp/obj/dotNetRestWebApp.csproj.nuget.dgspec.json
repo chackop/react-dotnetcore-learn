@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/dimpchax/Documents/code/react-dotnetcore-learn/dotNetRestWebApp/dotNetRestWebApp.csproj": {}
+    "/Users/dimpchax/Documents/code/react-dotnetcore-learn/dotNetRestWebApp/dotNetRestWebApp/dotNetRestWebApp/dotNetRestWebApp.csproj": {}
   },
   "projects": {
-    "/Users/dimpchax/Documents/code/react-dotnetcore-learn/dotNetRestWebApp/dotNetRestWebApp.csproj": {
+    "/Users/dimpchax/Documents/code/react-dotnetcore-learn/dotNetRestWebApp/dotNetRestWebApp/dotNetRestWebApp/dotNetRestWebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/dimpchax/Documents/code/react-dotnetcore-learn/dotNetRestWebApp/dotNetRestWebApp.csproj",
+        "projectUniqueName": "/Users/dimpchax/Documents/code/react-dotnetcore-learn/dotNetRestWebApp/dotNetRestWebApp/dotNetRestWebApp/dotNetRestWebApp.csproj",
         "projectName": "dotNetRestWebApp",
-        "projectPath": "/Users/dimpchax/Documents/code/react-dotnetcore-learn/dotNetRestWebApp/dotNetRestWebApp.csproj",
+        "projectPath": "/Users/dimpchax/Documents/code/react-dotnetcore-learn/dotNetRestWebApp/dotNetRestWebApp/dotNetRestWebApp/dotNetRestWebApp.csproj",
         "packagesPath": "/Users/dimpchax/.nuget/packages/",
-        "outputPath": "/Users/dimpchax/Documents/code/react-dotnetcore-learn/dotNetRestWebApp/obj/",
+        "outputPath": "/Users/dimpchax/Documents/code/react-dotnetcore-learn/dotNetRestWebApp/dotNetRestWebApp/dotNetRestWebApp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/dimpchax/.nuget/NuGet/NuGet.Config"
+          "/Users/dimpchax/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
@@ -35,16 +35,6 @@
       },
       "frameworks": {
         "netcoreapp3.0": {
-          "dependencies": {
-            "EntityFramework": {
-              "target": "Package",
-              "version": "(, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[3.0.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
