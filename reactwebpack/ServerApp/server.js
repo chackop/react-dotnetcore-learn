@@ -1,30 +1,54 @@
-import configureStore from "../redux/configureStore";
+//import 'babel-polyfill';
 
-const express = require('express');
+import express from 'express';
+import renderer from './Renderer';
+import configureStore from '../redux/configureStore';
+import Routes from "../ClientApp/Routes";
+import {renderRoutes,matchRoutes} from "react-router-config";
+
+require('dotenv').config();
+
+console.log('ENV:');
+console.log(' NODE_ENV:' + process.env.NODE_ENV);
+
+const restUrl = process.env.NODE_ENV === 'production' ?
+    process.env.PROD_RESTURL :
+    process.env.JSONSERVER_RESTURL;
+
 const app = express();
 
-// enable the next two lines allows for urls like /speakers to resolve directly
-// const history = require('connect-history-api-fallback');
-// app.use(history());
-
-app.use(express.static('public',{
+app.use(express.static('public', {
     index: false
 }));
 
-import Renderer from './Renderer';
 app.get('*', (req, res) => {
 
     const store = configureStore();
-    const rendererInstance = Renderer(req,store);
 
-    if (rendererInstance.routestatus == 404){
-        res.status(404).end("Not found, 404 status returned");
-    } else {
+
+    // see matchRoutes docs... https://www.npmjs.com/package/react-router-config
+    const myRoutes = matchRoutes(Routes, req.path);
+
+    const promises = myRoutes.map(({route, match}) => {
+        return route.loadData
+            ? route.loadData(store)
+            : Promise.resolve(null)
+    });
+
+    Promise.all(promises).then(() => {
         const context = {};
-        res.send(Renderer(req,store,context).htmlcode);
-    }
+        const content = renderer(req, store, context);
+        if (content.routestatus == 404) {
+            res.status(404).end("Not found, 404 status returned (Server Side Generated)");
+        } else {
+            res.send(content.htmlcode);
+        }
+    });
+
 });
 
-app.listen(3040, function () {
-    console.log('Listening on port 3040!');
+const PORT = process.env.PORT || 3040;
+
+app.listen(PORT, function () {
+    console.log('Listening on port ' + PORT);
 });

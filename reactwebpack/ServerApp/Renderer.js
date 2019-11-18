@@ -1,13 +1,14 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import { renderToString } from 'react-dom/server';
-import { StaticRouter as Router } from 'react-router-dom';
-import { renderRoutes } from "react-router-config";
+import {StaticRouter as Router} from 'react-router-dom';
+import { renderRoutes } from 'react-router-config';
+import serialize from 'serialize-javascript';
 import Routes from '../ClientApp/Routes';
-import Provider from "react-redux/es/components/Provider";
-//import FullPage from '../ClientApp/Components/common/FullPage';
 
-export default (req, store) => {
-    let context = {};
+
+export default (req, store, context) => {
+
     const content = renderToString(
         <Provider store={store}>
             <Router location={req.path} context={context}>
@@ -24,7 +25,10 @@ export default (req, store) => {
           </head>
           
           <body>
-            <div id="app">${content}</div>
+            <div>
+                <div id="app">${content}</div>
+                </div>
+            <script>window.__STATE__=${serialize(store.getState())}</script>
             <script src="clientbundle.js"></script>
           </body>
           

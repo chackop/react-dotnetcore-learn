@@ -90,7 +90,8 @@ const mapStateToProps = (state) => {
 
 
 // this is returning a promise
-function loadData() {
+function loadData(store) {
+    return store.dispatch(speakersFetchData());
 }
 
 export default {

@@ -11,11 +11,16 @@ class Login extends Component {
     }
 }
 
+function loadData() {
+    return promise.resolve();
+}
+
 Login.propTypes = {};
 Login.defaultProps = {};
 
 export default {
-    component: connect()(Login)
+    component: connect()(Login),
+    loadData
 };
 
 

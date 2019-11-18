@@ -9,7 +9,7 @@ const App = ({ route }) => {
     return (
         <div>
             <PageTop>
-                <CodeCampMenu />
+                <CodeCampMenu/>
             </PageTop>
             {renderRoutes(route.routes)}
             <Footer />

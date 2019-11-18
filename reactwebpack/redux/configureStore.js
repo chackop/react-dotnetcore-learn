@@ -36,7 +36,7 @@ export default function configureStore(initialState = {}) {
     });
 
     //const restUrl = 'http://localhost:4000/rest';
-
+    //console.log('configureStore: ' + restUrl);
     const client = axios.create({ //all axios can be used, shown in axios documentation
         baseURL: restUrl,
         //responseType: 'json'

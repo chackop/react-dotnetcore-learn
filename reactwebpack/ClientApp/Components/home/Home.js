@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 import PropTypes from 'prop-types';
 import HomeHeader from './HomeHeader';
@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 import { sessionsFetchData } from ".././../../redux/actions/sessions";
 import { speakersFetchData } from ".././../../redux/actions/speakers";
 
-import { updateSession } from "../../../redux/actions/sessions";
+import {updateSession} from "../../../redux/actions/sessions";
 
 class Home extends Component {
 
@@ -47,7 +47,11 @@ const mapStateToProps = (state) => {
     };
 };
 
-function loadData() {
+function loadData(store) {
+    // wait for both retrieves to finish when server side renderings
+    const prom2 = store.dispatch(speakersFetchData());
+    const prom1 = store.dispatch(sessionsFetchData());
+    return Promise.all([prom1,prom2]);
 }
 
 // export default connect(mapStateToProps,
@@ -55,7 +59,7 @@ function loadData() {
 
 export default {
     component: connect(mapStateToProps,
-        { sessionsFetchData, speakersFetchData, updateSession })(Home),
+        {sessionsFetchData,speakersFetchData,updateSession })(Home),
     loadData
 };
 
