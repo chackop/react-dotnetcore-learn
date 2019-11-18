@@ -1,7 +1,7 @@
 ﻿<Properties StartupConfiguration="{3FEBF1C9-ED74-4C23-AFFF-D2A83DDCF252}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="dotNetRestWebApp/Controllers/SpeakersController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="dotNetRestWebApp/Controllers/SessionsController.cs">
     <Files>
-      <File FileName="dotNetRestWebApp/Controllers/SpeakersController.cs" Line="148" Column="1" />
+      <File FileName="dotNetRestWebApp/Controllers/SessionsController.cs" Line="15" Column="23" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -9,7 +9,7 @@
           <Node name="dotNetRestWebApp" expanded="True">
             <Node name="dotNetRestWebApp" expanded="True">
               <Node name="Controllers" expanded="True">
-                <Node name="SpeakersController.cs" selected="True" />
+                <Node name="SessionsController.cs" selected="True" />
               </Node>
             </Node>
           </Node>

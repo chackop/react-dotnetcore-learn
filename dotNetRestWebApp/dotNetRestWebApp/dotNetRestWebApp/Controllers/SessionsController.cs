@@ -19,80 +19,76 @@ namespace dotNetRestWebApp.Controllers
     // [Route("api/[controller]")]
     // [ApiController]
     [Produces("application/json")]
-    [Route("rest/Speakers")]
-    public class SpeakersController : ControllerBase
+    [Route("rest/Sessions")]
+    public class SessionsController : ControllerBase
     {
         private readonly MyDbContext _context;
 
-        public SpeakersController(MyDbContext context)
+        public SessionsController(MyDbContext context)
         {
             _context = context;
         }
 
-        // GET: api/Speakers
+        // GET: api/Sessions
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<SpeakerRec>>> GetSpeakerRecs()
+        public async Task<ActionResult<IEnumerable<SessionRec>>> GetSessionRecs()
         {
-            if (_context.SpeakerRecs.ToList().Count == 0)
-            {
-                InitSpeakersData();
-            }
-
             Thread.Sleep(200);// artificial delay for UI
-
-            return await _context.SpeakerRecs.ToListAsync();
+            if (_context.SessionRecs.ToList().Count == 0)
+            {
+                InitSessionsData();
+            }
+            return await _context.SessionRecs.ToListAsync();
         }
 
-        private void InitSpeakersData()
+        private void InitSessionsData()
         {
             string file;
             var assembly = Assembly.GetEntryAssembly();
             // string[] resources = assembly.GetManifestResourceNames(); // debugging purposes only to get list of embedded resources
             string[] resources = this.GetType().GetTypeInfo().Assembly.GetManifestResourceNames();
-
-            using (var stream = 
-                assembly.GetManifestResourceStream("dotNetRestWebApp.Data.speakers.json"))
+            using (var stream = assembly.GetManifestResourceStream("dotNetRestWebApp.Data.sessions.json"))
             {
                 using (var reader = new StreamReader(stream))
                 {
                     file = reader.ReadToEnd();
                 }
             }
-            List<SpeakerRec> speakerRecs = JsonConvert.DeserializeObject<SpeakerRec[]>(file).ToList();
-            foreach (var speaker in speakerRecs)
+            List<SessionRec> sessionRecs = JsonConvert.DeserializeObject<SessionRec[]>(file).ToList();
+            foreach (var session in sessionRecs)
             {
-                _context.SpeakerRecs.Add(speaker);
+                _context.SessionRecs.Add(session);
             }
             _context.SaveChanges();
             return;
         }
 
-        // GET: api/Speakers/5
+        // GET: api/Sessions/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<SpeakerRec>> GetSpeakerRec(int id)
+        public async Task<ActionResult<SessionRec>> GetSessionRec(int id)
         {
-            var speakerRec = await _context.SpeakerRecs.FindAsync(id);
+            var sessionRec = await _context.SessionRecs.FindAsync(id);
 
-            if (speakerRec == null)
+            if (sessionRec == null)
             {
                 return NotFound();
             }
 
-            return speakerRec;
+            return sessionRec;
         }
 
-        // PUT: api/Speakers/5
+        // PUT: api/Sessions/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutSpeakerRec(int id, SpeakerRec speakerRec)
+        public async Task<IActionResult> PutSessionRec(int id, SessionRec sessionRec)
         {
-            if (id != speakerRec.Id)
+            if (id != sessionRec.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(speakerRec).State = EntityState.Modified;
+            _context.Entry(sessionRec).State = EntityState.Modified;
 
             try
             {
@@ -100,7 +96,7 @@ namespace dotNetRestWebApp.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!SpeakerRecExists(id))
+                if (!SessionRecExists(id))
                 {
                     return NotFound();
                 }
@@ -113,37 +109,37 @@ namespace dotNetRestWebApp.Controllers
             return NoContent();
         }
 
-        // POST: api/Speakers
+        // POST: api/Sessions
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
-        public async Task<ActionResult<SpeakerRec>> PostSpeakerRec(SpeakerRec speakerRec)
+        public async Task<ActionResult<SessionRec>> PostSessionRec(SessionRec sessionRec)
         {
-            _context.SpeakerRecs.Add(speakerRec);
+            _context.SessionRecs.Add(sessionRec);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetSpeakerRec", new { id = speakerRec.Id }, speakerRec);
+            return CreatedAtAction("GetSessionRec", new { id = sessionRec.Id }, sessionRec);
         }
 
-        // DELETE: api/Speakers/5
+        // DELETE: api/Sessions/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<SpeakerRec>> DeleteSpeakerRec(int id)
+        public async Task<ActionResult<SessionRec>> DeleteSessionRec(int id)
         {
-            var speakerRec = await _context.SpeakerRecs.FindAsync(id);
-            if (speakerRec == null)
+            var sessionRec = await _context.SessionRecs.FindAsync(id);
+            if (sessionRec == null)
             {
                 return NotFound();
             }
 
-            _context.SpeakerRecs.Remove(speakerRec);
+            _context.SessionRecs.Remove(sessionRec);
             await _context.SaveChangesAsync();
 
-            return speakerRec;
+            return sessionRec;
         }
 
-        private bool SpeakerRecExists(int id)
+        private bool SessionRecExists(int id)
         {
-            return _context.SpeakerRecs.Any(e => e.Id == id);
+            return _context.SessionRecs.Any(e => e.Id == id);
         }
     }
 }
