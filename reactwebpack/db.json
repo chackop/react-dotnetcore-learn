@@ -686,7 +686,7 @@
       "sessionUrl": "diving-into-deep-learning",
       "description": "A fast-paced introduction for beginners (knowledge of Python is helpful) to Deep Learning (DL) concepts, such as Neural Networks, backprop, activation functions, and CNNs, RNNs (e.g., LSTMs). We'll look at some code samples in TensorFlow, Keras, Angular, and Android, and then wrap up with a book raffle of recent books.\n",
       "speakersNamesCsv": "Oswald Campesato",
-      "interestLevel": 0
+      "interestLevel": 2
     },
     {
       "id": 6183,
@@ -694,7 +694,7 @@
       "sessionUrl": "rock-your-net-core-best-practices",
       "description": "In this sessions, you will learn how to apply .NET Framework best practices to .NET Core. There are a lot of changes and every developer needs to attend this session before moving to .NET Core. This is part 6 in my 6 part series titled “Improving Code Quality… One Developer At A Time”.",
       "speakersNamesCsv": "David McCarter",
-      "interestLevel": 0
+      "interestLevel": 1
     },
     {
       "id": 6184,
